@@ -1,9 +1,11 @@
+h2 {
+  font-family: monospace;
+}
 .folder-wrapper {
     animation: floatAround 7s ease-in-out infinite;
     transition: transform 0.3s ease;
   }
 
-  /* Modal styles for project details */
   .inner-content-card {
     border-radius: 8px;
     overflow: hidden;
@@ -34,7 +36,7 @@
   }
 
   .project-title { font-size: 2rem; font-weight: 800; }
-  .project-description { color: #333; }
+  .project-description { color: #ffffff; font-family: monospace;}
   
   .folder-wrapper:hover {
     animation-play-state: paused;
@@ -75,3 +77,196 @@
   .z-20 {
     z-index: 20;
   }
+
+  /* Project Detail Styling */
+  .outer-container {
+    background-color: #0A007A;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+  }
+  
+  .inner-content-card {
+    background-color: #1800AD;
+    max-width: 1200px; 
+    width: 100%;
+    padding: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6);
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .project-image-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  
+  .main-project-img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    animation: image-zoom 0.8s ease-out;
+  }
+  
+  @keyframes image-zoom {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+  }
+  .project-info {
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px 40px 20px; 
+    color: #ffffff;
+  }
+  
+  .project-title {
+    font-size: clamp(2rem, 2vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+  }
+  
+  .footer-wrap {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+  
+  .copyright-label {
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    opacity: 0.6;
+    white-space: nowrap;
+    text-shadow: 
+      -1px -1px 0 #0A007A,  
+       1px -1px 0 #0A007A,
+      -1px  1px 0 #0A007A,
+       1px  1px 0 #0A007A;
+  }
+  
+  .loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loader-bar-container {
+    width: 250px;
+    height: 2px;
+    background-color: #f3f4f6;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loader-progress {
+    position: absolute;
+    inset: 0;
+    background-color: #1800AD;
+    animation: loading-slide 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes loading-slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+.inner-content-card {
+  background: #1800AD;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-project-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inner-content-card::-webkit-scrollbar {
+  width: 8px;
+}
+.inner-content-card::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.footer-bottom-nav {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.nav-btn:hover {
+  color: #00E1FF;
+  padding-right: 10px;
+}
+
+.active-link {
+  opacity: 1;
+  /* border-right: 2px solid #00E1FF; */
+  padding-right: 8px;
+}
+
+.inactive-link {
+  opacity: 0.4;
+}
+.fixed-signature {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  pointer-events: none;
+  animation: fadeIn 1s ease-in-out;
+}
+  
+.fixed-signature p {
+  color: rgba(255, 255, 255, 0.815);
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: lowercase;
+  white-space: nowrap;
+}

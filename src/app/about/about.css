@@ -1,30 +1,13 @@
-
-/* Animated gradient background */
-.animated-bg {
-	position: absolute;
-	inset: 0;
-	z-index: 0;
-	background: linear-gradient(120deg, #1800AD 0%, #6B00FF 25%, #00E1FF 50%, #00FFA3 75%, #1800AD 100%);
-	background-size: 200% 200%;
-	opacity: 0.16;
-	filter: blur(30px) saturate(120%);
-	animation: bgAnimate 12s linear infinite;
+p {
+	font-family: monospace;
 }
 
-@keyframes bgAnimate {
-	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
-}
-
-/* Animated title gradient + subtle float */
 .animated-title {
 	position: relative;
 	z-index: 2;
 	background: linear-gradient(90deg, #fff 0%, #6bdaff 50%, #fff 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
-	color: transparent;
 	background-size: 200% 100%;
 	animation: titleShift 4s linear infinite;
 }
@@ -47,7 +30,6 @@
 	100% { transform: translateY(0); }
 }
 
-/* Typing effect for the paragraph subtitle */
 .typing {
 	position: relative;
 	z-index: 2;
@@ -71,3 +53,42 @@
 	to { opacity: 0; }
 }
 
+.footer-bottom-nav {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.nav-btn:hover {
+  color: #00E1FF;
+  padding-right: 10px;
+}
+
+.active-link {
+  opacity: 1;
+  padding-right: 8px;
+}
+
+.inactive-link {
+  opacity: 0.4;
+}

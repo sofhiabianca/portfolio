@@ -1,14 +1,13 @@
-nav button {
+  nav button {
     position: relative;
     display: block;
     background: transparent;
     border: none;
-    color: inherit;
+    color: monospace;
     text-align: left;
     padding: 0;
   }
 
-  /* subtle circular indicator instead of a '>' character */
   nav button::before {
     content: '';
     position: absolute;
@@ -38,9 +37,8 @@ nav button {
     outline: none;
   }
   
-  /* keyboard hint under the menu */
   .menu-hint {
-    font-family: inherit;
+    font-family: monospace;
     display: flex;
     align-items: center;
     gap: 0.75rem;

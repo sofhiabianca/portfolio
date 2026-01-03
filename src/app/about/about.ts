@@ -82,4 +82,24 @@ export class AboutComponent implements OnInit, OnDestroy {
       });
     }, 1500);
   }
+  isActive(link: string): boolean {
+    const currentPath = this.router.url;
+    const targetPath = link === 'HOME' ? '/' : `/${link.toLowerCase()}`;
+    return currentPath === targetPath;
+  }
+
+  menuNavigation(link: string) {
+    const path = link === 'HOME' ? '/' : `/${link.toLowerCase()}`;
+    
+    this.isLoading.set(true);
+    
+    // Optional: Add a small delay before navigating to let the user see the "loading"
+    setTimeout(() => {
+      this.router.navigateByUrl(path).then(() => {
+        // The isLoading state usually resets on the next component's ngOnInit, 
+        // but we'll clear it here as a fallback
+        this.isLoading.set(false);
+      });
+    }, 800);
+  }
 }

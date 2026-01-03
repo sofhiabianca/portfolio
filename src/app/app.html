@@ -14,10 +14,16 @@
         <div class="flex flex-col text-white gap-2">
           <h2 class="text-5xl font-bold tracking-[20px]">PORTFOLIO</h2>
           <h2 class="text-xl font-medium opacity-80 lowercase tracking-[0.2em]">Sofhia Lacandola</h2>
-          <div class="mt-8">
+          <div class="contact-methods">
+            <a href="mailto:biancaxsofhia@gmail.com" class="contact-link">email</a>
+            <a href="/Lacandola_Resume2025.pdf" target="_blank" class="contact-link">resume</a>
+            <a href="https://linkedin.com/in/sofhia-lacandola" target="_blank" class="contact-link">linkedin</a>
+            <a href="tel:+639391416624" class="contact-link">message</a>
+            </div>
+          <div class="mt-20">
             <button (click)="startTransition()" class="relative group overflow-hidden bg-white px-8 py-2">
               <span class="relative z-10 text-[#1800AD] font-black text-xl transition-colors duration-300 group-hover:text-white">START</span>
-              <div class="absolute inset-0 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 translate-x-[-101%] transition-transform duration-300 ease-out group-hover:translate-x-0"></div>
+              <div class="absolute inset-0 bg-gradient-to-r from-[#1800AD] via-pink-500 to-purple-600 translate-x-[-101%] transition-transform duration-300 ease-out group-hover:translate-x-0"></div>
             </button>
           </div>
         </div>
@@ -29,13 +35,11 @@
     <router-outlet />
   </div>
 
-  <app-footer />
-
   <app-cursor></app-cursor>
 
-  <!-- @if (showCopyright()) {
+  @if (showCopyright()) {
     <footer class="fixed-signature">
       <p>© 2026 sofhia lacandola</p>
     </footer>
-  } -->
+  }
 </div>

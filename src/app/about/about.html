@@ -17,8 +17,20 @@
       
       <div class="max-w-md animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
       <h1 class="animated-title text-[5vw] font-black tracking-tighter leading-none">learn about <span class="me">ME</span></h1>
-      <p class="subtitle typing text-sm md:text-base leading-relaxed font-light tracking-wide opacity-90" aria-live="polite" [innerText]="displayedText">
+      <p class="subtitle typing mt-5 text-sm md:text-base leading-relaxed font-light tracking-wide opacity-90" aria-live="polite" [innerText]="displayedText">
       </p>
       </div>
     </section>
+
+    <nav class="footer-bottom-nav">
+      @for (link of ['HOME', 'ABOUT', 'WORKS']; track link) {
+        <button 
+          (click)="menuNavigation(link)" 
+          class="nav-btn"
+          [class.active-link]="isActive(link)"
+          [class.inactive-link]="!isActive(link)">
+          {{ link }}
+        </button>
+      }
+    </nav>
   </main>

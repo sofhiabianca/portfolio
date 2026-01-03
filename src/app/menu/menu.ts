@@ -19,7 +19,6 @@ export class MenuComponent {
   constructor(private router: Router) {}
 
   ngAfterViewInit(): void {
-    // focus the first button so keyboard navigation works immediately
     setTimeout(() => this.focusButton(this.selectedIndex));
   }
 

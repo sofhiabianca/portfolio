@@ -32,19 +32,36 @@
   }
   
   .fixed-signature p {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.815);
     font-size: 10px;
     letter-spacing: 0.5em;
     text-transform: lowercase;
     white-space: nowrap;
-    text-shadow: 
-      -1px -1px 0 #1800AD,  
-       1px -1px 0 #1800AD,
-      -1px  1px 0 #1800AD,
-       1px  1px 0 #1800AD;
   }
   
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
   }
+
+  .contact-methods {
+    position: absolute;
+    left: 14%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 3rem;
+    z-index: 5;
+}
+
+.contact-link {
+    color: white;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.contact-link:hover {
+    opacity: 0.5;
+}

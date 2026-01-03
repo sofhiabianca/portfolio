@@ -1,0 +1,73 @@
+
+/* Animated gradient background */
+.animated-bg {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	background: linear-gradient(120deg, #1800AD 0%, #6B00FF 25%, #00E1FF 50%, #00FFA3 75%, #1800AD 100%);
+	background-size: 200% 200%;
+	opacity: 0.16;
+	filter: blur(30px) saturate(120%);
+	animation: bgAnimate 12s linear infinite;
+}
+
+@keyframes bgAnimate {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* Animated title gradient + subtle float */
+.animated-title {
+	position: relative;
+	z-index: 2;
+	background: linear-gradient(90deg, #fff 0%, #6bdaff 50%, #fff 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	background-size: 200% 100%;
+	animation: titleShift 4s linear infinite;
+}
+
+.animated-title .me {
+	display: inline-block;
+	transform-origin: center;
+	animation: bob 3s ease-in-out infinite;
+}
+
+@keyframes titleShift {
+	0% { background-position: 0% 0%; }
+	50% { background-position: 100% 0%; }
+	100% { background-position: 0% 0%; }
+}
+
+@keyframes bob {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-6px); }
+	100% { transform: translateY(0); }
+}
+
+/* Typing effect for the paragraph subtitle */
+.typing {
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+	white-space: pre-wrap;
+	max-width: 38rem;
+}
+
+.typing::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0.2rem;
+	width: 2px;
+	height: 1.4rem;
+	background: rgba(255,255,255,0.9);
+	animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+	to { opacity: 0; }
+}
+

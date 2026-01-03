@@ -1,0 +1,26 @@
+<main class="outer-container">
+  
+    @if (isLoading()) {
+      <div class="loading-overlay">
+        <div class="loader-bar-container">
+          <div class="loader-progress"></div>
+        </div>
+      </div>
+    }
+  
+    <div class="inner-content-card animate-in fade-in slide-in-from-bottom-10 duration-1000">
+      <div class="project-image-container">
+        <img [src]="'assets/projects/p' + projectId + '.jpg'" 
+             class="main-project-img"
+             alt="Project Showcase">
+      </div>
+  
+      <div class="project-info">
+        <h1 class="project-title">{{ currentProject?.title }}</h1>
+        <p class="project-description">
+            {{ currentProject?.description }}
+        </p>
+      </div>
+    </div>
+  
+  </main>

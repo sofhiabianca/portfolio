@@ -1,0 +1,24 @@
+<main class="bg-[#1800AD] min-h-screen flex flex-col md:flex-row text-white overflow-hidden relative">
+  <div class="animated-bg" aria-hidden="true"></div>
+  
+    @if (isLoading()) {
+      <div class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white animate-in fade-in duration-500">
+        <div class="w-64 h-[2px] bg-gray-100 relative overflow-hidden">
+          <div class="absolute inset-0 bg-[#1800AD] animate-loading-slide"></div>
+        </div>
+      </div>
+    }
+  
+    <section class="w-full md:w-1/2 h-64 md:h-auto bg-white relative animate-in fade-in duration-1000">
+      <img src="/sofhia-pic.jpg" class="w-full h-full object-cover">
+    </section>
+  
+    <section class="w-full md:w-1/2 flex flex-col justify-center p-12 md:p-20 relative">
+      
+      <div class="max-w-md animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
+      <h1 class="animated-title text-[5vw] font-black tracking-tighter leading-none">learn about <span class="me">ME</span></h1>
+      <p class="subtitle typing text-sm md:text-base leading-relaxed font-light tracking-wide opacity-90" aria-live="polite" [innerText]="displayedText">
+      </p>
+      </div>
+    </section>
+  </main>

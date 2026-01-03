@@ -1,0 +1,107 @@
+.outer-container {
+    background-color: #0A007A;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+  }
+  
+  .inner-content-card {
+    background-color: #1800AD;
+    max-width: 1200px; 
+    width: 100%;
+    padding: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6);
+  }
+  
+  .project-image-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  
+  .main-project-img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  
+  .project-info {
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px 40px 20px; 
+    color: #ffffff;
+  }
+  
+  .project-title {
+    font-size: clamp(2rem, 2vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+  }
+  
+  .footer-wrap {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+  
+  .copyright-label {
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    opacity: 0.6;
+    white-space: nowrap;
+    text-shadow: 
+      -1px -1px 0 #0A007A,  
+       1px -1px 0 #0A007A,
+      -1px  1px 0 #0A007A,
+       1px  1px 0 #0A007A;
+  }
+  
+  .loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loader-bar-container {
+    width: 250px;
+    height: 2px;
+    background-color: #f3f4f6;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loader-progress {
+    position: absolute;
+    inset: 0;
+    background-color: #1800AD;
+    animation: loading-slide 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes loading-slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }

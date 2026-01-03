@@ -1,0 +1,33 @@
+<footer class="real-footer bg-[#1800AD] text-white relative">
+    <div class="footer-container">
+      
+      <div class="keep-in-touch">
+        <h2 class="script-header">
+          <span class="styled-k">K</span>eep in touch.
+        </h2>
+      </div>
+  
+      <nav class="contact-methods">
+        <a href="mailto:biancaxsofhia@gmail.com" class="contact-link">email</a>
+        <a href="assets/resume.pdf" target="_blank" class="contact-link">resume</a>
+        <a href="https://linkedin.com/in/sofhia-lacandola" target="_blank" class="contact-link">linkedin</a>
+        <a href="/message" class="contact-link">message</a>
+      </nav>
+  
+      <nav class="footer-bottom-nav">
+        @for (link of ['HOME', 'ABOUT', 'WORKS']; track link) {
+          <button 
+            (click)="navigateTo(link)" 
+            class="nav-btn"
+            [class.active-link]="isActive(link)"
+            [class.inactive-link]="!isActive(link)">
+            {{ link }}
+          </button>
+        }
+      </nav>
+    </div>
+
+    <div class="footer-signature">
+      <p>© 2026 sofhia lacandola</p>
+    </div>
+</footer>

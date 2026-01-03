@@ -1,0 +1,69 @@
+<main class="relative bg-[#1800AD] min-h-screen overflow-hidden text-white">
+    @if (isLoading()) {
+        <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white animate-in fade-in duration-500">
+          <div class="w-64 h-[2px] bg-gray-100 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[#1800AD] animate-loading-slide"></div>
+          </div>
+        </div>
+      }
+    <div class="absolute inset-0 flex flex-col items-center justify-center select-none z-0 pointer-events-none">
+      <h2 class="text-4xl font-light tracking-[0.5em] mb-[-1.5rem] opacity-80">WHAT ARE MY</h2>
+      <h1 class="text-[12vw] font-black tracking-tighter leading-none">PROJECTS</h1>
+    </div>
+  
+    @for (f of folders; track f.id) {
+        <div 
+          [style.top]="f.top" 
+          [style.left]="f.left"
+          [style.animation-delay]="f.delay"
+          class="absolute cursor-pointer z-10 folder-wrapper group flex flex-col items-center"
+          (mouseenter)="onHover(f)"
+          (mouseleave)="onLeave(f)"
+          (click)="openProjectModal(f.id)">
+          
+          <div class="w-24 h-24 md:w-32 md:h-32 relative">
+            <span class="absolute top-0 left-0 z-20 text-[12px] font-black text-white folder-id-text">
+              {{ f.id }}
+            </span>
+            <ng-lottie [options]="options" (animationCreated)="animationCreated($event, f)"></ng-lottie>
+          </div>
+        </div>
+      }
+      
+      /* Modal overlay for project details */
+      @if (modalOpen && selectedProject) {
+        <div class="fixed inset-0 z-40 flex items-center justify-center bg-black/50 animate-in fade-in duration-300" (click)="closeProjectModal()">
+          <div class="inner-content-card animate-in fade-in slide-in-from-bottom-10 duration-700 bg-white text-black max-w-4xl w-[92%] mx-4" (click)="$event.stopPropagation()">
+            <div class="project-image-container">
+              <img [src]="'assets/projects/p' + selectedProject.id + '.jpg'" 
+                   class="main-project-img"
+                   alt="Project Showcase">
+            </div>
+
+            <div class="project-info p-6">
+              <h1 class="project-title">{{ selectedProject?.title }}</h1>
+              <p class="project-description">{{ selectedProject?.description }}</p>
+            </div>
+          </div>
+        </div>
+      }
+<!--   
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-in fade-in duration-1000 delay-500 fill-mode-both">
+      <p class="text-white/60 text-[10px] tracking-[0.5em] uppercase whitespace-nowrap">
+        © 2026 sofhia lacandola
+      </p>
+    </div>
+
+    <nav class="absolute bottom-12 right-12 z-20 flex flex-col items-end gap-1 animate-in fade-in slide-in-from-right-8 duration-700 delay-300 fill-mode-both">
+      @for (link of ['HOME', 'ABOUT', 'WORKS', 'CONTACT']; track link) {
+        <button 
+          (click)="navigateTo(link === 'HOME' ? '/' : '/' + link.toLowerCase())"
+          class="text-sm font-medium tracking-[0.2em] transition-all hover:text-orange-500 hover:pr-2 cursor-pointer outline-none bg-transparent border-none p-0 text-right uppercase"
+          [class.opacity-40]="link !== 'WORKS'">
+          {{ link }}
+        </button>
+      }
+    </nav>
+   -->
+  
+  </main>

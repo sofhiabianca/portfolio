@@ -45,13 +45,11 @@
   }
 
   .contact-methods {
-    position: absolute;
-    left: 14%;
-    top: 52%;
-    transform: translate(-50%, -50%);
     display: flex;
-    gap: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
     z-index: 5;
+    margin-left: 4px;
 }
 
 .contact-link {
